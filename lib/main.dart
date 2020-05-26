@@ -1,7 +1,7 @@
-import 'package:counter/features/bloc/home_bloc.dart';
 import 'package:counter/features/home_screen.dart';
+import 'package:counter/features/provider/counter_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: BlocProvider(
-        create: (context) => HomeBloc(),
+      home: ChangeNotifierProvider(
+        create: (context) => CounterProvider(),
         child: HomeScreen(),
       ),
     );
